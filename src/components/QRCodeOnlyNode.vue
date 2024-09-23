@@ -360,8 +360,8 @@ body {
 }
 
 /* header {
-    /* background: blue; */
-}
+     background: blue; *
+}*/
 
 */ main {
     /* Чтобы занимал оставшееся пространство */
