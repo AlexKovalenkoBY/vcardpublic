@@ -359,11 +359,11 @@ body {
     min-height: 100vh;
 }
 
-header {
+/* header {
     /* background: blue; */
 }
 
-main {
+*/ main {
     /* Чтобы занимал оставшееся пространство */
     flex-grow: 1;
     /* background: red; */
