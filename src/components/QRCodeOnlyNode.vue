@@ -83,7 +83,7 @@ import html2canvas from 'html2canvas';
 import QRCode from 'qrcode'
 import jsPDF from 'jspdf';
 import { MaskInput } from 'vue-3-mask';
-import html2pdf from 'html2pdf.js';
+// import html2pdf from 'html2pdf.js';
 
 export default {
     components: { MaskInput, },
@@ -224,12 +224,12 @@ export default {
 
         // Создание PDF из HTML-контента
         const createPDF = async () => {
-            const quality = 0.9; // Установите желаемое качество (от 0 до 1)
+            // const quality = 0.9; // Установите желаемое качество (от 0 до 1)
             const img1 = await html2canvas(cardbackside.value, { scale: 10 });
             const img2 = await html2canvas(cardfrontside.value, { scale: 10 });
             //надо попробовать использовать
-            const imgData = img1.toDataURL('image/png', quality);
-            const imgData2 = img2.toDataURL('image/png', quality);
+            // const imgData = img1.toDataURL('image/png', quality);
+            // const imgData2 = img2.toDataURL('image/png', quality);
 
             const doc = new jsPDF({
                 unit: 'mm',
