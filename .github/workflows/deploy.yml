@@ -1,13 +1,9 @@
 name: Deploy to GitHub Pages
-title: My Site
-description: This is my site
-baseurl: '' # the subpath of your site, e.g. /blog
-url: 'https://alexkovalenkoby.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 
 on:
   push:
     branches:
-      - main # Замените на имя вашей ветки, например, 'master' или 'develop'
+      - main
 
 jobs:
   build-and-deploy:
@@ -20,17 +16,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build project
         run: npm run build
-        continue-on-error: true
 
-      - name: Debug build output
-        run: |
-          echo "Checking build output:"
-          ls -la ./dist
-          cat ./dist/index.html
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
