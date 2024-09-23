@@ -17,7 +17,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      input: './main.js', // Укажите основной файл приложения
+      input: './assets/main.js', // Укажите основной файл приложения
     },
   },
 })
