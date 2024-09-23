@@ -10,10 +10,14 @@ export default defineConfig({
     vue(),
     VueDevTools(),
   ],
-  // build.chunkSizeWarningLimit: 600
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  build: {
+    rollupOptions: {
+      input: './main.js', // Укажите основной файл приложения
+    },
   },
 })
