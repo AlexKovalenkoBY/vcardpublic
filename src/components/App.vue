@@ -10,7 +10,8 @@
             <p style="position: absolute; top: 35mm; left: 8mm;">{{ phone }}</p>
             <p style="position: absolute; top: 39mm; left: 8mm;">{{ phonecell }}</p>
             <p style="position: absolute; bottom: 3mm; left: 48mm;" v-html="addrforcard"></p>
-            <img src="@/assets/logo.png" width="155mm" style="position: absolute; top: 3mm; left: 40mm;">
+            <!-- <img src="@/assets/logo.png" width="155mm" style="position: absolute; top: 3mm; left: 40mm;"> -->
+            <img alt="Здесь может быть ваш логотип..." width="155mm" style="position: absolute; top: 3mm; left: 40mm;">
             <div id="bar" ref="bar"></div>
             <div id="barleft"></div>
 
@@ -75,6 +76,9 @@
         </footer>
 
     </div>
+    <footer>
+        * Цвет и логотип можно установить любые по вашим пожеланиям...
+    </footer>
 </template>
 
 <script>
@@ -363,7 +367,7 @@ body {
      background: blue; *
 }*/
 
-*/ main {
+main {
     /* Чтобы занимал оставшееся пространство */
     flex-grow: 1;
     /* background: red; */
@@ -418,7 +422,7 @@ footer {
     width: 1mm;
     height: 13mm;
     bottom: 3mm;
-    background-color: #f15a26;
+    background-color: rgb(69, 38, 241);
     position: absolute;
     left: 45mm;
 }
@@ -427,7 +431,7 @@ footer {
     width: 1mm;
     height: 13mm;
     bottom: 3mm;
-    background-color: #f15a26;
+    background-color: rgb(69, 38, 241);
     position: absolute;
     left: 5mm;
 }

@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "npx vite build && npx gh-pages -d dist",
     "preview": "vite preview",
     "test:unit": "vitest",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write src/"
   },
   "homepage": "https://AlexKovalenkoBY.github.io/vcardbapb",
   "dependencies": {
