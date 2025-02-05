@@ -11,7 +11,8 @@
             <p style="position: absolute; top: 39mm; left: 8mm;">{{ phonecell }}</p>
             <p style="position: absolute; bottom: 3mm; left: 48mm;" v-html="addrforcard"></p>
             <!-- <img src="@/assets/logo.png" width="155mm" style="position: absolute; top: 3mm; left: 40mm;"> -->
-            <img alt="Здесь может быть ваш логотип..." width="155mm" style="position: absolute; top: 3mm; left: 40mm;">
+            <img src="@/assets/pngegg.png" alt="Здесь может быть ваш логотип..." width="65mm"
+                style="position: absolute; top: 3mm; left: 60mm;">
             <div id="bar" ref="bar"></div>
             <div id="barleft"></div>
 
@@ -41,14 +42,14 @@
             <input v-model="email" @input="generateQRCode" placeholder="Email " v-clearonesc @keydown="adjustFontSize"
                 title="например: i.ivanov@mogilev.belapb.by" />
             <label>Телефон сотовый:</label>
-            <MaskInput v-model="phonecell" mask="+375 (##) ###-##-###" placeholder="+375 (29) --- -- --" v-clearonesc
+            <MaskInput v-model="phonecell" mask="+### (##) ###-##-###" placeholder="+### (29) --- -- --" v-clearonesc
                 title="Вводить только цифры " />
             <label>Телефон рабочий:</label>
             <!-- <input v-model="phone" @input="generateQRCode" placeholder="Телефон с кодом" /> -->
-            <MaskInput v-model="phone" mask="+375 (###) ##-##-##" placeholder="+375 (222) -- -- --" v-clearonesc
+            <MaskInput v-model="phone" mask="+### (###) ##-##-##" placeholder="+### (222) -- -- --" v-clearonesc
                 title="Вводить только цифры " />
             <label>Полный адрес:</label>
-            <input v-model="address" @touchstart="generateQRCode" placeholder="Республика Беларусь" readonly
+            <input v-model="address" @touchstart="generateQRCode" placeholder="Российская федерация" readonly
                 title="Выберите область">
             <!-- <input v-model="region" @touchstart="generateQRCode" placeholder="......ская область" /> -->
             <select v-model="region">
@@ -57,7 +58,7 @@
                 </option>
             </select>
             <input v-model="city" @touchstart="generateQRCode" placeholder="город, городской поселок, деревня и т.д."
-                v-clearonesc title="например: г. Калинковичи" :readonly="region === 'г. Минск'" />
+                v-clearonesc title="например: г. Калинковичи" :readonly="region === 'г. Москва'" />
             <input v-model="street" @touchstart="generateQRCode" placeholder="улица, проспект и т.д." v-clearonesc
                 title="например: ул. Социалистическая" />
             <input v-model="housenumber" @touchstart="generateQRCode" placeholder="номер дома, корпус" v-clearonesc
@@ -99,7 +100,7 @@ export default {
         const email = ref('');
         const phone = ref('');
         const phonecell = ref('');
-        const address = ref("Республика Беларусь");
+        const address = ref("Российская Федерация");
         const region = ref('');
         const city = ref('');
         const street = ref('');
@@ -186,7 +187,7 @@ export default {
             //ADR:;;пр.Мира, 55;г.Могилев;Могилевская область;212027;Республика Беларусь
             // addrforcard.value = address.value + ",\n" + region.value.trim().toString() + ',\n' + city.value.trim() + ', ' + street.value.trim() + ', ' + housenumber.value.trim();
             addrforcard.value = address.value + ",<br>";
-            (region.value.trim() == 'г. Минск') ? addrforcard.value = addrforcard.value +
+            (region.value.trim() == 'г. Москва') ? addrforcard.value = addrforcard.value +
                 region.value.trim() + ',<br>' + street.value.trim() + ',' + housenumber.value.trim()
                 : addrforcard.value = addrforcard.value +
                 region.value.trim()
@@ -305,14 +306,14 @@ export default {
 
 
             regionoptions: [
-                { text: 'г. Минск', value: 'г. Минск' },
-                { text: 'Брестская область', value: 'Брестская область' },
-                { text: 'Витебская область', value: 'Витебская область' },
-                { text: 'Гомельская область', value: 'Гомельская область' },
-                { text: 'Гродненская область', value: 'Гродненская область' },
-                { text: 'Минская область', value: 'Минская область' },
-                { text: 'Могилевская область', value: 'Могилевская область' },
-                // { text: 'г. Минск ', value: 'г. Минск' }
+                { text: 'г. Москва', value: 'г. Москва' },
+                { text: 'Московская область', value: 'Московская область' },
+                { text: 'Ленинградская область', value: 'Ленинградская область' },
+                { text: 'Смоленская область', value: 'Смоленская область' },
+                { text: 'Тверская область', value: 'Тверская область' },
+                { text: 'Брянская область', value: 'Москваая область' },
+                { text: 'Могилевская область', value: 'Псковская область' },
+                // { text: 'г. Москва ', value: 'г. Москва' }
             ]
         }
     },
